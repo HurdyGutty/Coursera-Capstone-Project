@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "coursera": "^0.0.1",
+    "react-app": "^1.1.2"
+  }
+}
