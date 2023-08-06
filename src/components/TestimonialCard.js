@@ -3,10 +3,14 @@
 const TestimonialCard = ({ testimonial }) => {
     return (
         <article className="testimonial-card">
-            <h4>Rating</h4>
-            <span>{testimonial.rating}/5</span>
-            <img src={testimonial.avatar} alt="avatar" />
-            <p>{testimonial.name}</p>
+            <div className="testimonial-card-head">
+                <h3 className="card-title">Rating</h3>
+                <b>{testimonial.rating}/5</b>
+            </div>
+            <div className="testimonial-avatar">
+                <img src={testimonial.avatar} alt="avatar" />
+                <p>{testimonial.name}</p>
+            </div>
             <p>{testimonial.comment}</p>
         </article>
     )
