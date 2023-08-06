@@ -1,38 +1,281 @@
-.App {
+.title {
+  font-family: Markazi Text;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0 0;
+}
+
+.city {
+  font-family: Markazi Text;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.description_text {
+  font-family: Karla;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card-title {
+  color: #000;
+  font-family: Karla;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+}
+
+nav {
+  width: 100%;
   text-align: center;
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (min-width: 700px) {
+  nav {
+    padding: 0 calc((2 * var(--grid-width-with-gutter)));
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navbar-links {
+  width: 60%;
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+nav img {
+  width: 207.127px;
+  height: 56.038px;
+}
+
+#navbar-links a {
+  text-decoration: none;
+  color: #000;
+  font-family: Karla;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+#hero {
+  display: grid;
+  background-color: #495E57;
+  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  padding: 12vh calc(var(--grid-width-with-gutter));
+  position: relative;
+}
+
+#hero article {
+  align-self: center;
+}
+
+#hero header {
+  color: #F4CE14;
+  line-height: 3rem;
+}
+
+#hero .city {
+  color: #FFF;
+}
+
+#hero .description_text {
+  color: #FFF;
+  width: 55%;
+}
+
+#hero img {
+  justify-self: center;
+  border-radius: 16px;
+  border: 1px solid #000;
+  width: 436px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+
+button {
+  display: flex;
+  width: 12.5rem;
+  height: 3.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: #F4CE14;
+  border-radius: 16px;
+  color: #000;
+  text-align: center;
+  font-family: Karla;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+}
+
+@media screen and (max-width: 1200px) {
+  #hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 3vw calc(var(--grid-width-with-gutter) / 2);
+    grid-row-gap: 3vw;
+    position: static;
+  }
+
+  #hero img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    justify-self: center;
+    align-self: center;
+    position: static;
+    top: auto;
+    left: auto;
+  }
+
+  #hero article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+  }
+
+  #hero .description_text {
+    width: 100%;
+  }
+}
+
+#highlights {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 3vw;
+  padding: 3vw calc(var(--grid-width-with-gutter) / 2);
+  ;
 }
 
-.App-link {
-  color: #61dafb;
+#highlights .title {
+  line-height: 3rem;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#food-cards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+
+}
+
+.food-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+  background-color: rgba(251, 218, 187, 0.70);
+  border-radius: 16px;
+
+}
+
+.food-card>img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0 5vw 3vw 5vw;
+}
+
+.card-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-head .card-title {
+  line-height: 16px;
+}
+
+.card-head span {
+  color: #EE9972;
+  font-family: Karla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+
+.food-card b img {
+  width: 1rem;
+  aspect-ratio: 1/1;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 1200px) {
+  #highlights {
+    padding: 10vw var(--grid-width-with-gutter) 3vw;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "title button"
+      "card card";
+
   }
-  to {
-    transform: rotate(360deg);
+
+  #hightlights .header {
+    grid-area: title;
   }
+
+  #highlights .title {
+    text-align: left;
+  }
+
+  #hightlights button {
+    grid-area: button;
+  }
+
+  #food-cards-container {
+    grid-area: card;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3vw;
+  }
+
+  .card-content {
+    padding: 0 2vw 3vw 2vw;
+    height: 100%;
+  }
+
+  .card-content b {
+    margin-top: auto;
+  }
+}
+
+img {
+  max-width: 100vw;
 }
