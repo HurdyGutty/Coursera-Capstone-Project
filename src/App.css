@@ -372,6 +372,10 @@ button {
 }
 
 @media screen and (min-width: 1200px) {
+  #testimonials {
+    padding: 5vw var(--grid-width-with-gutter);
+  }
+
   #testimonials-cards-container {
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(1, auto);
