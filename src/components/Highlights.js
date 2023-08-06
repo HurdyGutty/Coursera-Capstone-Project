@@ -4,8 +4,8 @@ import FoodCard from './FoodCard'
 const Highlights = () => {
     return (
         <section id="highlights">
-            <header>
-                <h1>This weeks specials!</h1>
+            <header className='title'>
+                This weeks specials!
             </header>
             <button type="button" onClick={{}} >Online Menu</button>
             <div id="food-cards-container">
