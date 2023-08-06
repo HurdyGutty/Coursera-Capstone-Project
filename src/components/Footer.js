@@ -6,8 +6,8 @@ const Footer = () => {
     return (
         <footer id="footer">
             <img src={Restaurant} alt="restaurant interior" />
-            <section>
-                {footer_info.map((info) => <FooterLinks info={info} />)}
+            <section id="footer-link-container">
+                {footer_info.map((info, index) => <FooterLinks key={index} info={info} />)}
             </section>
         </footer>
     )
