@@ -1,10 +1,53 @@
+:root {
+  --grid-columns-width: calc(100% - (20px * (var(--column-count) - 1)));
+  --colum-width: calc(var(--grid-columns-width) / var(--column-count));
+  --grid-width-with-gutter: calc(var(--colum-width) + 20px);
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --column-count: 4;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 700px) {
+  :root {
+    --column-count: 8;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  :root {
+    --column-count: 12;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  margin: 0 70px;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Karla', 'Roboto', 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+div #root {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    margin: 0;
+  }
 }
 
 code {
