@@ -4,13 +4,13 @@ const Hero = () => {
     return (
         <section id="hero">
             <article>
-                <header>
+                <header className='title'>
                     Little Lemon
                 </header>
-                <p>
+                <p className='city'>
                     Chicago
                 </p>
-                <p>
+                <p className='description_text'>
                     We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
                 </p>
                 <button type="button" onClick={{}} >Reserve a table</button>
