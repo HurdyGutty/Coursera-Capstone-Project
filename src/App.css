@@ -179,7 +179,7 @@ nav>img {
   justify-self: center;
   border-radius: 16px;
   border: 1px solid #000;
-  max-width: 436px;
+
   margin: auto;
   aspect-ratio: 1/1;
   position: absolute;
@@ -209,6 +209,7 @@ button {
 @media screen and (min-width: 700px) {
   #hero img {
     width: 42vw;
+    max-width: 436px;
   }
 }
 
