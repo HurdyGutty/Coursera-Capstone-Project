@@ -1,6 +1,6 @@
 .title {
   font-family: Markazi Text;
-  font-size: 64px;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 500;
   margin: 0 0;
@@ -8,7 +8,7 @@
 
 .city {
   font-family: Markazi Text;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -26,7 +26,7 @@
 .card-title {
   color: #000;
   font-family: Karla;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
   margin: 0;
@@ -80,6 +80,7 @@ nav>img {
   width: 125%;
   position: absolute;
   top: 110%;
+  visibility: hidden;
 }
 
 
@@ -137,6 +138,7 @@ nav>img {
     align-items: center;
     box-shadow: none;
     background-color: white;
+    visibility: visible;
   }
 
   #navbar-links a {
@@ -667,7 +669,7 @@ button {
 
   #footer img {
     width: 100%;
-    aspect-ratio: 7/8;
+    aspect-ratio: 7/11;
   }
 }
 
