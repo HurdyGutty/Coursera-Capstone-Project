@@ -154,13 +154,19 @@ nav>img {
   display: grid;
   background-color: #495E57;
   align-items: start;
-  grid-template-columns: 1fr 1fr;
-  padding: 12vh calc(var(--grid-width-with-gutter));
-  position: relative;
+  grid-template-rows: auto auto;
+  padding: 5vw calc(var(--grid-width-with-gutter) / 2);
+  gap: 5vw;
 }
 
 #hero article {
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 3vw;
 }
 
 #hero header {
@@ -170,23 +176,21 @@ nav>img {
 
 #hero .city {
   color: #FFF;
+  margin-top: -1rem;
 }
 
 #hero .description_text {
   color: #FFF;
-  width: 55%;
+  width: 100%;
+  margin: 0;
 }
 
 #hero img {
-  justify-self: center;
   border-radius: 16px;
   border: 1px solid #000;
-
   margin: auto;
+  width: 100%;
   aspect-ratio: 1/1;
-  position: absolute;
-  left: 50%;
-  top: 10%;
 }
 
 button {
@@ -215,34 +219,37 @@ button {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 900px) {
   #hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    padding: 3vw calc(var(--grid-width-with-gutter) / 2);
+    grid-template-columns: 36vw auto;
+    grid-template-rows: 1fr;
+    padding: 5vw var(--grid-width-with-gutter);
     grid-row-gap: 3vw;
-    position: static;
+    position: relative;
+    margin-bottom: 7vw;
   }
 
   #hero img {
     aspect-ratio: 1/1;
     justify-self: center;
     align-self: center;
-    position: static;
-    top: auto;
-    left: auto;
+    position: absolute;
+    top: 2vw;
+    left: 45vw;
+    width: 45%;
   }
 
   #hero article {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
+    align-items: start;
+    text-align: start;
+    gap: 1vw;
   }
 
   #hero .description_text {
-    width: 100%;
+    width: 55%;
   }
 }
 
@@ -322,7 +329,7 @@ button {
 
 @media screen and (min-width: 1200px) {
   #highlights {
-    padding: 10vw var(--grid-width-with-gutter) 3vw;
+    padding: 3vw var(--grid-width-with-gutter);
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
