@@ -1,5 +1,6 @@
 import Logo from "../pictures/icon_assets/Logo.svg"
 import Hamburger from "../pictures/icon_assets/🦆 icon _hamburger menu.svg"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
     return (
@@ -8,12 +9,12 @@ const Navbar = () => {
             <div id="navbar-links-container">
                 <img src={Hamburger} alt="Menu" />
                 <ul id="navbar-links">
-                    <a href="#"><li>Home</li></a>
-                    <a href="#"><li>About</li></a>
-                    <a href="#"><li>Menu</li></a>
-                    <a href="#"><li>Reservations</li></a>
-                    <a href="#"><li>Order Online</li></a>
-                    <a href="#"><li>Login</li></a>
+                    <Link to="/"><li>Home</li></Link>
+                    <Link to="/about"><li>About</li></Link>
+                    <Link to="/menu"><li>Menu</li></Link>
+                    <Link to="/resevation"><li>Reservations</li></Link>
+                    <Link to="/order"><li>Order Online</li></Link>
+                    <Link to="/login"><li>Login</li></Link>
                 </ul>
             </div>
         </nav>
