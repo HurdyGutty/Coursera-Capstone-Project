@@ -3,6 +3,7 @@ import Highlights from './components/Highlights';
 import Testimonials from './components/Testimonials';
 import About from './components/About';
 import { Route, Routes } from 'react-router-dom';
+import BookingPage from './BookingPage';
 
 const Main = () => {
     return (
@@ -29,6 +30,7 @@ const Main = () => {
                         <About />
                     }
                 />
+                <Route path='/reservation' element={<BookingPage />} />
             </Routes>
         </main>
     )
