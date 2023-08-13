@@ -20,9 +20,12 @@ const Main = () => {
                     }
                 />
                 <Route
-                    path="/customer-stories"
+                    path="/"
                     element={
-                        <Testimonials />
+                        <>
+                            <Hero />
+                            <Testimonials />
+                        </>
                     }
                 />
                 <Route
