@@ -4,6 +4,7 @@ import Testimonials from './components/Testimonials';
 import About from './components/About';
 import { Route, Routes } from 'react-router-dom';
 import BookingPage from './BookingPage';
+import Order from './Order';
 
 const Main = () => {
     return (
@@ -31,6 +32,12 @@ const Main = () => {
                     }
                 />
                 <Route path='/reservation' element={<BookingPage />} />
+                <Route path='/order' element={
+                    <>
+                        <Hero />
+                        <Order />
+                    </>
+                } />
             </Routes>
         </main>
     )
