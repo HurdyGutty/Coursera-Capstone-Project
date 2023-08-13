@@ -1,13 +1,14 @@
 import { useState } from "react";
-import availableTimes from "../contents/availableTimes";
 
-const BookingForm = () => {
+const BookingForm = ({ availableTimes, dispatch }) => {
     const [formData, setFormData] = useState({
         date: Date(now),
         time: "17:00",
         guests: "1",
         occasion: ""
     })
+
+
     const handleSubmit = e => {
         e.preventDefault();
         console.log(formData);
@@ -19,7 +20,10 @@ const BookingForm = () => {
             <input type="date" id="res-date"
                 value={formData.date}
                 onChange={
-                    e => setFormData(data => ({ ...data, date: Date(e.target.value) }))
+                    e => {
+                        setFormData(data => ({ ...data, date: Date(e.target.value) }))
+                        dispatch({ type: "update", payload: "" })
+                    }
                 } />
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time " value={formData.time} onChange={e => setFormData(data => ({ ...data, time: e.target.value }))}>

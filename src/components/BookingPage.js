@@ -1,10 +1,10 @@
 import BookingForm from "./BookingForm";
 
 
-const BookingPage = () => {
+const BookingPage = ({ availableTimes, dispatch }) => {
     return (
         <>
-            <BookingForm />
+            <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
         </>
     );
 };
