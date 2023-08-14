@@ -12,8 +12,14 @@ const Main = () => {
     const initialTimes = () => timetables;
 
     const updateTimes = (state, action) => {
-        if (action.type === "update") {
-            return action.payload;
+        if (action.day === 0) {
+            return state.slice().splice(-2, 2);
+        }
+        if (action.day === 1) {
+            return state.slice(1, -1);
+        }
+        if (action.day === 2) {
+            return state.slice().splice(0, 2);
         }
         return state;
     };

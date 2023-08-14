@@ -2,12 +2,19 @@ import { useState } from "react";
 
 const BookingForm = ({ availableTimes, dispatch }) => {
     const [formData, setFormData] = useState({
-        date: Date(now),
-        time: "17:00",
+        date: "",
+        time: "",
         guests: "1",
         occasion: ""
     })
 
+    const handleDateChange = e => {
+        if (Date.prototype.isPrototypeOf(e.target.valueAsDate)) {
+            setFormData(data => ({ ...data, date: e.target.valueAsDate.toISOString().substring(0, 10) }))
+            dispatch({ day: e.target.valueAsDate.getDay() })
+        }
+
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -15,34 +22,46 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     }
 
     return (
-        <form id="booking-form" style="display: grid; max-width: 200px; gap: 20px" onSubmit={handleSubmit}>
-            <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date"
-                value={formData.date}
-                onChange={
-                    e => {
-                        setFormData(data => ({ ...data, date: Date(e.target.value) }))
-                        dispatch({ type: "update", payload: "" })
-                    }
-                } />
-            <label htmlFor="res-time">Choose time</label>
-            <select id="res-time " value={formData.time} onChange={e => setFormData(data => ({ ...data, time: e.target.value }))}>
-                {availableTimes.map(time => <option key={time} value={time} />)}
-            </select>
-            <label htmlFor="guests">Number of guests</label>
-            <input type="number" defaultValue="1" min="1" max="10" id="guests"
-                value={formData.guests}
-                onChange={e => setFormData(data => ({ ...data, guests: e.target.value }))} />
-            <label htmlFor="occasion">Occasion</label>
-            <select id="occasion"
-                value={formData.occasion}
-                placeholder="Select occasion"
-                onChange={e => setFormData(data => ({ ...data, guests: e.target.value }))}>
-                <option>Birthday</option>
-                <option>Anniversary</option>
-            </select>
-            <input type="submit" value="Make Your reservation" />
-        </form >
+        <>
+            <header className="title">
+                <h1>Book Now</h1>
+            </header>
+            <form id="booking-form" data-testid="booking-form" onSubmit={handleSubmit}>
+
+                <label htmlFor="res-date">Choose date</label>
+                <input type="date" id="res-date"
+                    value={formData.date}
+                    onChange={
+                        handleDateChange
+                    } />
+
+                <label htmlFor="res-time">Choose time</label>
+                <select
+                    id="res-time "
+                    value={formData.time}
+                    onChange={e => setFormData(data => ({ ...data, time: e.target.value }))}
+                >
+                    <option value="" disabled hidden>Select time</option>
+                    {availableTimes.map(time => <option key={time} value={time} >{time}</option>)}
+                </select>
+
+                <label htmlFor="guests">Number of guests</label>
+                <input type="number" min="1" max="10" id="guests"
+                    value={formData.guests}
+                    onChange={e => setFormData(data => ({ ...data, guests: e.target.value }))} />
+
+                <label htmlFor="occasion">Occasion</label>
+                <select id="occasion"
+                    value={formData.occasion}
+                    onChange={e => setFormData(data => ({ ...data, occasion: e.target.value }))}>
+                    <option value="" disabled hidden>Select occasion</option>
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                </select>
+
+                <button type="submit" >Make Your Reservation</button>
+            </form >
+        </>
     );
 }
 
