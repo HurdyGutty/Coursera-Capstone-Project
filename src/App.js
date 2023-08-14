@@ -6,17 +6,19 @@ import Highlights from './components/Highlights';
 import Testimonials from './components/Testimonials';
 import About from './components/About';
 import Footer from './components/Footer';
+import Main from './components/Main';
 
 function App() {
   return (
     <>
       <Navbar />
-      <main>
+      {/* <main>
         <Hero />
         <Highlights />
         <Testimonials />
         <About />
-      </main>
+      </main> */}
+      <Main />
       <Footer />
     </>
   );
