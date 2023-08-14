@@ -1,7 +1,7 @@
-import Hero from './components/Hero';
-import Highlights from './components/Highlights';
-import Testimonials from './components/Testimonials';
-import About from './components/About';
+import Hero from './Hero';
+import Highlights from './Highlights';
+import Testimonials from './Testimonials';
+import About from './About';
 import { Route, Routes } from 'react-router-dom';
 import BookingPage from './BookingPage';
 import Order from './Order';
@@ -45,7 +45,9 @@ const Main = () => {
                         <About />
                     }
                 />
-                <Route path='/reservation' element={<BookingPage availableTimes={availableTimes} dispatch={dispatchAvailableTimes} />} />
+                <Route path='/reservation' element={
+                    <BookingPage availableTimes={availableTimes} dispatch={dispatchAvailableTimes} />
+                } />
                 <Route path='/order' element={
                     <>
                         <Hero />
