@@ -1,4 +1,4 @@
-export default mealTimes = {
+const mealTimes = {
     "Lunch": [
         {
             "id": 1,
@@ -82,3 +82,5 @@ export default mealTimes = {
         }
     ]
 }
+
+export default mealTimes;
