@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { createContext } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Highlights from './components/Highlights';
@@ -7,6 +7,8 @@ import Testimonials from './components/Testimonials';
 import About from './components/About';
 import Footer from './components/Footer';
 import Main from './components/Main';
+import { BookingApiProvider } from './context/BookingApiContext';
+import { AlertMessangeProvider } from './context/AlertMessage';
 
 function App() {
   return (
@@ -18,7 +20,11 @@ function App() {
         <Testimonials />
         <About />
       </main> */}
-      <Main />
+      <AlertMessangeProvider>
+        <BookingApiProvider>
+          <Main />
+        </BookingApiProvider>
+      </AlertMessangeProvider>
       <Footer />
     </>
   );
