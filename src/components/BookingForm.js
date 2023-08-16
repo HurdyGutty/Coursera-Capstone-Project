@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
     const [formData, setFormData] = useState({
         date: "",
         time: "",
@@ -11,14 +11,14 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     const handleDateChange = e => {
         if (Date.prototype.isPrototypeOf(e.target.valueAsDate)) {
             setFormData(data => ({ ...data, date: e.target.valueAsDate.toISOString().substring(0, 10) }))
-            dispatch({ day: e.target.valueAsDate.getDay() })
+            dispatch({ type: 'DATE_CHANGE', date: e.target.valueAsDate })
         }
 
     }
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(formData);
+        submitForm(formData)
     }
 
     return (
@@ -42,7 +42,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
                     onChange={e => setFormData(data => ({ ...data, time: e.target.value }))}
                 >
                     <option value="" disabled hidden>Select time</option>
-                    {availableTimes.map(time => <option key={time} value={time} >{time}</option>)}
+                    {availableTimes.map(time => <option key={time} value={time} data-testid="time-options" >{time}</option>)}
                 </select>
 
                 <label htmlFor="guests">Number of guests</label>

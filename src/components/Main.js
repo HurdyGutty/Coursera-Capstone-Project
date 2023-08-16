@@ -2,28 +2,22 @@ import Hero from './Hero';
 import Highlights from './Highlights';
 import Testimonials from './Testimonials';
 import About from './About';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import BookingPage from './BookingPage';
 import Order from './Order';
-import timetables from "../contents/availableTimes";
-import { useReducer } from 'react';
+import useBookingApi from '../customHooks/useBookingApi';
+import ConfirmBooking from './ConfirmBooking';
+import { submitAPI } from '../mock_api/api';
 
 const Main = () => {
-    const initialTimes = () => timetables;
-
-    const updateTimes = (state, action) => {
-        if (action.day === 0) {
-            return state.slice().splice(-2, 2);
+    const navigate = useNavigate();
+    const [dateTimes, dispatchDateTimes] = useBookingApi();
+    const submitForm = async (formData) => {
+        const response = await submitAPI(formData);
+        if (JSON.parse(response)) {
+            navigate('/reservation-confirmed');
         }
-        if (action.day === 1) {
-            return state.slice(1, -1);
-        }
-        if (action.day === 2) {
-            return state.slice().splice(0, 2);
-        }
-        return state;
-    };
-    const [availableTimes, dispatchAvailableTimes] = useReducer(updateTimes, initialTimes());
+    }
     return (
         <main>
             <Routes>
@@ -52,8 +46,12 @@ const Main = () => {
                     }
                 />
                 <Route path='/reservation' element={
-                    <BookingPage availableTimes={availableTimes} dispatch={dispatchAvailableTimes} />
+                    <BookingPage availableTimes={dateTimes.times} dispatch={dispatchDateTimes} submitForm={submitForm} />
                 } />
+                <Route path='/reservation-confirmed' element={
+                    <ConfirmBooking />
+                } />
+
                 <Route path='/order' element={
                     <>
                         <Hero />
