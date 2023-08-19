@@ -5,6 +5,7 @@ import { useEffect, useReducer } from 'react';
 function useBookingApi() {
     const { fetchAPI } = useBookingApiContext();
     const [alertMessange, setAlertMessange] = useAlertMessange();
+
     const initialTimes = { date: new Date, times: [] };
 
     const updateTimes = (state, action) => {
