@@ -6,7 +6,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import BookingPage from './BookingPage';
 import Order from './Order';
 import useBookingApi from '../customHooks/useBookingApi';
-import ConfirmBooking from './ConfirmBooking';
+import ConfirmBooking from './ConfirmedBooking';
 import { submitAPI } from '../mock_api/api';
 
 const Main = () => {
