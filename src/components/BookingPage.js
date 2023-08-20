@@ -3,7 +3,7 @@ import BookingForm from "./BookingForm";
 
 const BookingPage = ({ availableTimes, dispatch, submitForm }) => {
     return (
-        <section>
+        <section id="booking-page">
             <header className="title">
                 <h1>Book Now</h1>
             </header>
