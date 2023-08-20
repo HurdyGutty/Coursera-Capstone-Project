@@ -6,7 +6,7 @@ function useBookingApi() {
     const { fetchAPI } = useBookingApiContext();
     const [alertMessange, setAlertMessange] = useAlertMessange();
 
-    const initialTimes = { date: new Date, times: [] };
+    const initialTimes = { date: new Date(), times: [] };
 
     const updateTimes = (state, action) => {
         switch (action.type) {
@@ -18,6 +18,14 @@ function useBookingApi() {
                 throw new Error();
         }
     };
+    const initializer = async (initialTimes) => {
+        try {
+            const result = await fetchAPI(initialTimes.date);
+            return { date: initialTimes.date, times: JSON.parse(result) };
+        } catch (error) {
+            setAlertMessange('booking', 'Server not responding')
+        }
+    }
     const [dateTimes, dispatchDateTimes] = useReducer(updateTimes, initialTimes);
 
     useEffect(() => {
