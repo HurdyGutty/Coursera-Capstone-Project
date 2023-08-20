@@ -302,6 +302,12 @@ button:active {
   }
 }
 
+@media screen and (min-width: 1400px) {
+  #hero {
+    margin-bottom: 50px;
+  }
+}
+
 #highlights {
   width: 100%;
   display: flex;
