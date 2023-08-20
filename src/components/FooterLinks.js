@@ -9,11 +9,11 @@ const FooterLinks = ({ info }) => {
             <ul>
                 {info.links.map((link, index) => {
                     return (
-                        <a href={link.link} key={index}>
-                            <li>
+                        <li key={index}>
+                            <a href={link.link} >
                                 {link.name}
-                            </li>
-                        </a>
+                            </a>
+                        </li>
                     )
                 })}
             </ul>
