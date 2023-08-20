@@ -12,6 +12,7 @@ const Dish = ({ dish }) => {
             <p className="dish-price">
                 ${dish.price}
             </p>
+            <img className="dish-image" src={dish.image} alt={dish.name} />
         </article>
     )
 }
