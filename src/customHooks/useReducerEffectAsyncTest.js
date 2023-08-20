@@ -13,6 +13,14 @@ const useReducerEffectAsyncTest = () => {
                 throw new Error();
         }
     }
+    const initializer = async (initialTimes) => {
+        try {
+            const result = await (new Promise(resolve => setTimeout(() => resolve(JSON.stringify(['12:00', '13:00', '14:00', '15:00', '16:00'])), 1000)));
+            return { date: initialTimes.date, times: JSON.parse(result) };
+        } catch (error) {
+            throw new Error("Bad response from server");
+        }
+    }
     const [dateTimes, dispatchDateTimes] = useReducer(updateTimes, initialTimes);
 
     useEffect(() => {
