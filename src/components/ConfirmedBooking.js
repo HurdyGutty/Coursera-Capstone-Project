@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 const ConfirmBooking = () => {
     const navigate = useNavigate()
     return (
-        <section>
-            <header>
+        <section id="confirmed-booking">
+            <header className="section-title">
                 <h1>Your reservation has been submitted</h1>
             </header>
             <p>Thank you for your reservation. We will contact you shortly about your reservation.</p>
