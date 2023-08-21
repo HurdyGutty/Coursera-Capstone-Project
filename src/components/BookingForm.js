@@ -16,10 +16,10 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
         },
         validateOnChange: true,
         validationSchema: Yup.object({
-            date: Yup.date().min(today, 'Date can not be in the past').required('Required'),
-            time: Yup.string().required('Required').oneOf(availableTimes, "We are not open for reservation at this time"),
-            guests: Yup.number().min(1, "Minimum of 1 guest").max(10, "Maximum of 10 guests").required('Required'),
-            occasion: Yup.string().required('Required').oneOf(["Birthday", "Anniversary"], "We only accept Birthday or Anniversary events")
+            date: Yup.date().min(today, 'Date can not be in the past').required('Date is required'),
+            time: Yup.string().required('Time is required').oneOf(availableTimes, "We are not open for reservation at this time"),
+            guests: Yup.number().min(1, "Minimum of 1 guest").max(10, "Maximum of 10 guests").required('Number of guests is required'),
+            occasion: Yup.string().required('Occasion is required').oneOf(["Birthday", "Anniversary"], "We only accept Birthday or Anniversary events")
         }),
         onSubmit: values => {
             submitForm(values)
