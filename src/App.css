@@ -178,13 +178,14 @@ nav>img {
     text-align: center;
     display: block;
     width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   #navbar-links a {
     font-size: 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -342,7 +343,7 @@ button:active {
   gap: 3vw;
   background-color: rgba(251, 218, 187, 0.70);
   border-radius: 16px;
-
+  align-items: center;
 }
 
 .food-card>img {
@@ -350,6 +351,7 @@ button:active {
   aspect-ratio: 3/2;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  max-width: 90vw;
 }
 
 .card-content {
@@ -371,7 +373,7 @@ button:active {
 }
 
 .card-head span {
-  color: #EE9972;
+  color: #000;
   font-family: Karla;
   font-size: 16px;
   font-style: normal;
@@ -379,6 +381,9 @@ button:active {
   line-height: 16px;
 }
 
+.card-content a {
+  color: #495E57;
+}
 
 .food-card b img {
   width: 1rem;
@@ -428,7 +433,7 @@ button:active {
 }
 
 #testimonials {
-  background-color: #495E57;
+  /* background-color: #495E57; */
   padding: 5vw calc(var(--grid-width-with-gutter) / 2);
   display: flex;
   flex-direction: column;
@@ -440,7 +445,7 @@ button:active {
 #testimonials .title {
   text-align: center;
   font-size: 15vw;
-  color: #F4CE14;
+  color: black;
 }
 
 @media screen and (min-width: 460px) {
@@ -513,15 +518,23 @@ button:active {
 
 }
 
+.starred {
+  color: #03603C;
+}
+
 @media screen and (min-width: 1200px) {
   #testimonials {
     padding: 5vw var(--grid-width-with-gutter);
   }
 
   #testimonials-cards-container {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, auto);
     gap: 1vw;
+  }
+
+  .fa-star {
+    font-size: min(1.2vw, 1rem);
   }
 
   .testimonial-avatar img {
@@ -547,7 +560,7 @@ button:active {
 }
 
 #about .title {
-  color: #F4CE14;
+  color: #495E57;
   line-height: 3rem;
 }
 
@@ -865,6 +878,11 @@ button:focus {
   padding: 2vw calc(var(--grid-width-with-gutter) / 2);
 }
 
+#order .title {
+  line-height: 3rem;
+  text-align: center;
+}
+
 #meals-time {
   display: flex;
   flex-direction: row;
@@ -898,7 +916,7 @@ button:focus {
 #dishes-scroll {
   display: flex;
   flex-direction: column;
-  gap: min(3vw, 0.5rem);
+  gap: min(3vw, 1rem);
 }
 
 .dish-card {

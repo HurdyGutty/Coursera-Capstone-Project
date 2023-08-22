@@ -7,7 +7,7 @@ const Order = () => {
     const [meal, setMeal] = useState(meals[0])
     return (
         <section id="order">
-            <header className='section-title'>
+            <header className='title'>
                 ORDER FOR DELIVERY
             </header>
             <div id="meals-time" role="tablist" aria-label="Choosing meals">
