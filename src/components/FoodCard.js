@@ -1,9 +1,11 @@
 import Delivery from "../pictures/icon_assets/delivery.png"
+import { Link } from "react-router-dom"
 
 const FoodCard = ({ food }) => {
+
     return (
         <article className="food-card">
-            <img src={food.image} alt="Greek salad" />
+            <img src={food.image} alt={food.name} />
             <div className="card-content">
                 <div className="card-head">
                     <header>
@@ -13,9 +15,9 @@ const FoodCard = ({ food }) => {
                 </div>
                 <p>{food.description}</p>
                 <b>
-                    <a href="#">
+                    <Link to="/order">
                         Order a delivery <img src={Delivery} alt="Delivery" />
-                    </a>
+                    </Link>
                 </b>
             </div>
         </article>
