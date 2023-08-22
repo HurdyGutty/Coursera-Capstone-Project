@@ -9,7 +9,7 @@ const Highlights = () => {
             <header className='title'>
                 This weeks specials!
             </header>
-            <button type="button" onClick={e => navigate("/menu")} >Online Menu</button>
+            <button type="button" onClick={e => navigate("/order")} >Online Menu</button>
             <div id="food-cards-container">
                 <FoodCard food={food["greek salad"]} />
                 <FoodCard food={food["bruchetta"]} />

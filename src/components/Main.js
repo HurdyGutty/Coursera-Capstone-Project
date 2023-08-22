@@ -25,7 +25,6 @@ const Main = () => {
                     path="/menu"
                     element={
                         <>
-                            <Hero />
                             <Highlights />
                         </>
                     }
